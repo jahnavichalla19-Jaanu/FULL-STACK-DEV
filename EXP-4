@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors Demo</title>
+
+    <style>
+
+
+        /* Element Selector */
+        p {
+            color: blue;
+        }
+
+        /* ID Selector */
+        #main-heading {
+            color: white;
+            background-color: darkblue;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Class Selector */
+        .highlight {
+            color: darkred;
+            background-color: yellow;
+            padding: 10px;
+            border: 2px solid orange;
+        }
+
+        /* Group Selector */
+        h2, h3 {
+            color: white;
+            background-color: purple;
+            padding: 8px;
+        }
+
+        /* Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+
+
+        /* Descendant Selector */
+        .box p {
+            color: green;
+            background-color: lightgreen;
+            padding: 8px;
+        }
+
+        /* Child Selector */
+        .box > span {
+            color: white;
+            background-color: purple;
+            padding: 8px;
+        }
+
+        /* Adjacent Sibling Selector */
+        .sibling h3 + p {
+            background-color: lightblue;
+            color: darkblue;
+            padding: 10px;
+        }
+
+        /* General Sibling Selector */
+        .sibling h3 ~ p {
+            border-left: 5px solid orange;
+            padding: 10px;
+        }
+
+
+        /* ================================
+           3. PSEUDO-CLASS SELECTORS
+           ================================ */
+
+        /* Hover */
+        a:hover {
+            color: white;
+            background-color: red;
+            padding: 8px;
+        }
+
+        /* Focus */
+        input:focus {
+            background-color: lightyellow;
+            border: 3px solid red;
+            outline: none;
+        }
+
+        /* First child */
+        ul li:first-child {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Last child */
+        ul li:last-child {
+            color: green;
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           4. PSEUDO-ELEMENT SELECTORS
+           ================================ */
+
+        /* First Letter */
+        .pseudo::first-letter {
+            color: red;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        /* Before */
+        .pseudo::before {
+            content: "★ ";
+            color: orange;
+        }
+
+        /* After */
+        .pseudo::after {
+            content: " ✔";
+            color: green;
+        }
+
+
+        /* ================================
+           5. ATTRIBUTE SELECTORS
+           ================================ */
+
+        /* Text input */
+        input[type="text"] {
+            border: 3px solid blue;
+            padding: 10px;
+        }
+
+        /* Email input */
+        input[type="email"] {
+            border: 3px solid green;
+            padding: 10px;
+        }
+
+
+        /* ================================
+           GENERAL PAGE DESIGN
+           ================================ */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .section {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .box {
+            background-color: #eeeeff;
+            padding: 20px;
+            border: 2px solid blue;
+            border-radius: 8px;
+        }
+
+        .sibling {
+            background-color: #fff5e6;
+            padding: 20px;
+            border: 2px solid orange;
+            border-radius: 8px;
+        }
+
+        a {
+            display: inline-block;
+            color: blue;
+            text-decoration: none;
+            border: 2px solid blue;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        input {
+            margin: 8px;
+            border-radius: 5px;
+        }
+
+        li {
+            padding: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- MAIN HEADING -->
+    <h1 id="main-heading">
+        CSS SELECTORS
+    </h1>
+
+
+
+    <div class="section">
+
+        <h1>1. Simple Selectors</h1>
+
+        <h4>Element Selector</h4>
+
+        <p>
+            This paragraph is styled using an
+            <b>Element Selector</b>.
+        </p>
+
+
+        <h4>ID Selector</h4>
+
+        <p>
+            The main heading at the top uses an
+            <b>ID Selector</b>.
+        </p>
+
+
+        <h4>Class Selector</h4>
+
+        <p class="highlight">
+            This paragraph uses a Class Selector.
+        </p>
+
+
+        <h4>Group Selector</h4>
+
+        <p>
+            The H2 and H3 headings use a Group Selector.
+        </p>
+
+
+        <h4>Universal Selector</h4>
+
+        <p>
+            The * selector applies a style to all elements.
+        </p>
+
+    </div>
+
+
+    <!-- =================================
+         2. COMBINATOR SELECTORS
+         ================================= -->
+
+    <div class="section">
+
+        <h1>2. Combinator Selectors</h1>
+
+        <div class="box">
+
+            <h4>Descendant Selector</h4>
+
+            <p>
+                I am inside the DIV.
+                Therefore, I am selected by
+                the descendant selector.
+            </p>
+
+            <span>
+                I am a direct child of DIV.
+            </span>
+
+        </div>
+
+
+        <br>
+
+
+        <div class="sibling">
+
+            <h4>Sibling Selector</h4>
+
+            <p>
+                I am the adjacent sibling of H3.
+            </p>
+
+            <p>
+                I am another sibling of H3.
+            </p>
+
+            <p>
+                I am also a general sibling.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         3. PSEUDO-CLASS SELECTORS
+         ================================= -->
+
+    <div class="section">
+
+        <h1>3. Pseudo-Class Selectors</h1>
+
+        <h4>Hover Example</h4>
+
+        <p>
+            Move your mouse over the link:
+        </p>
+
+        <a href="#">
+            HOVER OVER ME
+        </a>
+
+
+        <h4>Focus Example</h4>
+
+        <p>
+            Click inside the input box:
+        </p>
+
+        <input type="text" placeholder="Click here">
+
+
+        <h4>First and Last Child</h4>
+
+        <ul>
+            <li>First Item - RED</li>
+            <li>Middle Item - BLUE</li>
+            <li>Last Item - GREEN</li>
+        </ul>
+
+    </di
+    <div class="section">
+
+        <h1>4. Pseudo-Element Selectors</h1>
+
+        <p class="pseudo">
+            This paragraph demonstrates
+            pseudo-elements.
+        </p>
+
+        <p>
+            The first letter is made bigger
+            using ::first-letter.
+        </p>
+
+    </div>
+
+
+
+
+    <div class="section">
+
+        <h1>5. Attribute Selectors</h1>
+
+        <p>
+            Text input has a BLUE border.
+        </p>
+
+        <input
+            type="text"
+            placeholder="Enter your name">
+
+        <p>
+            Email input has a GREEN border.
+        </p>
+
+        <input
+            type="email"
+            placeholder="Enter your email">
+
+    </div>
+
+
+</body>
+</html>
