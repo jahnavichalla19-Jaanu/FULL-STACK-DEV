@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilted Fixed Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f4f4f9; /* Keyword & HEX mixed example */
+            color: rgb(30, 30, 30);    /* RGB Color example */
+        }
+
+        .scroll-content {
+            height: 2000px; 
+            padding: 40px;
+            position: relative;
+            z-index: 2; /* Keeps text above the background image */
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%; 
+            left: 50%;
+            width: 600px;
+            height: 400px;
+            margin-top: -200px; 
+            margin-left: -300px;
+            background-image: url('https://picsum.photos'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: perspective(1000px) rotateY(30deg);
+          
+            z-index: 1; 
+            
+            opacity: 0.8; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-content">
+        <h1>Scroll Down to See the Effect</h1>
+        <p>The background image is locked 50% of the way down the screen.</p>
+        <p>It is tilted horizontally along the Y-axis using CSS 3D transforms.</p>
+        <p>Keep scrolling... it will stay completely fixed in place!</p>
+    </div>
+
+</body>
+</html>
